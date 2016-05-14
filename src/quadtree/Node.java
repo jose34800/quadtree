@@ -90,14 +90,14 @@ public class Node {
                     tmp.addAll(getPoints());
                     getPoints().clear();
                     for (Point childPoint : tmp) {
-                        addPoint(childPoint);
+                        maxdeep = addPoint(childPoint);
                     }
                 }
             } else {
                 int isIn = pointIsInHowMuchChildNodes(point);
                 if (isIn < 2) {
                     for (Node childNode : getNodes()) {
-                        childNode.addPoint(point);
+                        maxdeep = childNode.addPoint(point);
                     }
                 } else {
                     getPoints().add(point);
